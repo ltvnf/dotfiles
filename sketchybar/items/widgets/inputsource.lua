@@ -20,13 +20,14 @@ local function get_input_source()
         'defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources | grep "KeyboardLayout Name" | cut -c 33- | rev | cut -c 2- | rev',
         function(inputsource_info)
             inputsource_info = inputsource_info:gsub("\n", "")
+            inputsource_info = inputsource_info:gsub("\"", "")
             if inputsource_info == "Russian" then
                 inputsource:set({
                     label = {
                         string = "RU"
                     },
                 })
-            elseif inputsource_info == "ABC" then
+            elseif (inputsource_info == "ABC" or inputsource_info == "U.S.") then
                 inputsource:set({
                     label = {
                         string = "EN"
@@ -34,7 +35,7 @@ local function get_input_source()
                 })
             else
                 inputsource:set({
-                    label = "N/A",
+                    label = { string = inputsource_info },
                 })
             end
         end)
