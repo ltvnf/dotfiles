@@ -16,11 +16,7 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate"
-    },
-    {
-        "nvim-treesitter/playground",
-        build = ":TSUpdate"
+        build = ":TSUpdate",
     },
     {
         "mason-org/mason.nvim",
