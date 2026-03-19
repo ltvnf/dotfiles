@@ -9,6 +9,17 @@ local icons = {
     cpu = "􀫥",
     clipboard = "􀉄",
     ram = "􀫦",
+    disk = "􀥾",
+
+    weather = {
+      sunny = "􀆮",
+      partly_cloudy = "􀇕",
+      cloudy = "􀇂",
+      rain = "􀇅",
+      snow = "􀇏",
+      thunder = "􀇓",
+      fog = "􀇋",
+    },
 
     switch = {
       on = "􁏮",
@@ -59,6 +70,17 @@ local icons = {
     gear = "",
     cpu = "",
     clipboard = "Missing Icon",
+    disk = "󰋊",
+
+    weather = {
+      sunny = "󰖙",
+      partly_cloudy = "󰖕",
+      cloudy = "󰖐",
+      rain = "󰖗",
+      snow = "󰖘",
+      thunder = "󰖓",
+      fog = "󰖑",
+    },
 
     switch = {
       on = "󱨥",
