@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <mach/mach.h>
 #include <mach/mach_host.h>
+#include <sys/sysctl.h>
 
 // Struct to hold all RAM information
 typedef struct {
@@ -50,11 +51,17 @@ int get_ram_info(ram_info_t *ram) {
     
     // Calculate cached memory (file cache + purgeable)
     ram->cached_memory = ram->file_cache + ram->purgeable_memory;
-    
-    // Calculate total used and free (excluding cache from used memory)
-    ram->used_memory = ram->active_memory + ram->inactive_memory + ram->wired_memory + ram->compressed_memory - ram->cached_memory;
-    ram->total_memory = ram->used_memory + ram->free_memory + ram->cached_memory;
-    
+
+    // Get actual physical RAM
+    uint64_t total_mem;
+    size_t mem_size = sizeof(total_mem);
+    sysctlbyname("hw.memsize", &total_mem, &mem_size, NULL, 0);
+    ram->total_memory = total_mem;
+
+    // Used = active + wired (compressed pages are stored in wired memory,
+    // so they're already included; adding compressor_page_count would double-count)
+    ram->used_memory = ram->active_memory + ram->wired_memory;
+
     // Calculate percentages (rounded up)
     ram->usage_percent = (unsigned int)((ram->used_memory * 100.0 / ram->total_memory) + 0.5);
     ram->cache_percent = (unsigned int)((ram->cached_memory * 100.0 / ram->total_memory) + 0.5);
