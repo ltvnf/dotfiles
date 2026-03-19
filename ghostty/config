@@ -26,3 +26,7 @@ cursor-color = fefb51
 shell-integration-features = no-cursor
 cursor-style = block
 keybind = ctrl+enter=text:\r
+
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = hidden
+

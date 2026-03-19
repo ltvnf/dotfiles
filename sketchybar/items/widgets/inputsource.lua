@@ -11,7 +11,8 @@ local inputsource = sbar.add("item", "widgets.inputsource", {
         string = "N/A",
         -- background = {
         -- },
-        font = { family = settings.font.style_map["Heavy"] }
+        font = { family = settings.font.style_map["Heavy"] },
+        y_offset = -1,
     },
 })
 
@@ -24,13 +25,13 @@ local function get_input_source()
             if inputsource_info == "Russian" then
                 inputsource:set({
                     label = {
-                        string = "RU"
+                        string = "RU",
                     },
                 })
             elseif (inputsource_info == "ABC" or inputsource_info == "U.S.") then
                 inputsource:set({
                     label = {
-                        string = "EN"
+                        string = "EN",
                     },
                 })
             else
