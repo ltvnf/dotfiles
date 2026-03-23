@@ -1,6 +1,6 @@
 return {
   paddings = 1,
-  group_paddings = 5,
+  group_paddings = 4,
 
   icons = "sf-symbols", -- alternatively available: NerdFont
 

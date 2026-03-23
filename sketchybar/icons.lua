@@ -44,6 +44,10 @@ local icons = {
       right = "⟩",
       -- right = "|",
     },
+    syncthing = {
+      online = "􀊞",
+      offline = "􀊟",
+    },
     wifi = {
       upload = "􀄨",
       download = "􀄩",
@@ -100,6 +104,10 @@ local icons = {
       _25 = "",
       _0 = "",
       charging = ""
+    },
+    syncthing = {
+      online = "󰓦",
+      offline = "󰓤",
     },
     wifi = {
       upload = "",
