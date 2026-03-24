@@ -1,4 +1,10 @@
 vim.opt.guicursor = ""
+-- vim.opt.guicursor = {
+--     "n-v-c:block", -- Normal, visual, command-line: block cursor
+--     "i-ci-ve:ver25", -- Insert, command-line insert, visual-exclude: vertical bar
+--     "r-cr:hor20",  -- Replace mode: horizontal bar
+--     "o:hor50",     -- Operator-pending: horizontal bar
+-- }
 vim.wo.wrap = false
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -11,18 +17,18 @@ vim.opt.showtabline = 1
 
 vim.opt.smartindent = true
 
-vim.opt.swapfile = false 
-vim.opt.backup = false 
+vim.opt.swapfile = false
+vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true 
+vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes" 
+vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -34,7 +40,7 @@ vim.g.mapleader = " "
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -47,14 +53,14 @@ end, {})
 
 vim.api.nvim_create_augroup("SearchHighlight", {})
 vim.api.nvim_create_autocmd("CmdlineEnter", {
-  pattern = {"/", "?"}, -- when entering search
-  callback = function()
-    vim.o.hlsearch = true
-  end,
+    pattern = { "/", "?" }, -- when entering search
+    callback = function()
+        vim.o.hlsearch = true
+    end,
 })
 vim.api.nvim_create_autocmd("CmdlineLeave", {
-  pattern = {"/", "?"}, -- when leaving search
-  callback = function()
-    vim.o.hlsearch = false
-  end,
+    pattern = { "/", "?" }, -- when leaving search
+    callback = function()
+        vim.o.hlsearch = false
+    end,
 })
