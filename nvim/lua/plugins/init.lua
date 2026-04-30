@@ -14,10 +14,10 @@ return {
         },
         config = true
     },
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
+    -- {
+    --     "nvim-treesitter/nvim-treesitter",
+    --     build = ":TSUpdate",
+    -- },
     {
         "mason-org/mason.nvim",
         dependencies = {
@@ -28,11 +28,6 @@ return {
     { "rsh7th/cmp-nvim-lsp" },
     { "hrsh7th/nvim-cmp" },
     { "L3MON4D3/LuaSnip" },
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
