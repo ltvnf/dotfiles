@@ -46,11 +46,11 @@
 --   },
 -- }
 -- Use bash tree-sitter parser for Neovim's built-in `env` filetype
-vim.treesitter.language.register("bash", "env")
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "env",
-  callback = function(args)
-    pcall(vim.treesitter.start, args.buf, "bash")
-  end,
-})
+-- vim.treesitter.language.register("bash", "env")
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "env",
+--   callback = function(args)
+--     pcall(vim.treesitter.start, args.buf, "bash")
+--   end,
+-- })
