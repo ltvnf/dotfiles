@@ -2,6 +2,12 @@ return {
   paddings = 1,
   group_paddings = 4,
 
+  -- Pomodoro timer durations in minutes
+  pomodoro = {
+    work = 40,
+    rest = 10,
+  },
+
   icons = "sf-symbols", -- alternatively available: NerdFont
 
   -- This is a font configuration for SF Pro and SF Mono (installed manually)

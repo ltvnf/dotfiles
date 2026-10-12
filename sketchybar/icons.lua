@@ -21,6 +21,11 @@ local icons = {
       fog = "􀇋",
     },
 
+    pomodoro = {
+      work = "􀐱",
+      rest = "􀸙",
+    },
+
     switch = {
       on = "􁏮",
       off = "􁏯",
@@ -84,6 +89,11 @@ local icons = {
       snow = "󰖘",
       thunder = "󰖓",
       fog = "󰖑",
+    },
+
+    pomodoro = {
+      work = "󱎫",
+      rest = "󰅶",
     },
 
     switch = {
