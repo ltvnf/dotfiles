@@ -1,4 +1,5 @@
 return {
+    { dir = "~/projects/naviate/nvim", name = "navigate", lazy = false, priority = 1000 }, -- Navigate Dark
     { "savq/melange-nvim" },   -- The golden theme
     { "cocopon/iceberg.vim" }, -- The blue theme
     {

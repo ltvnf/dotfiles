@@ -1,5 +1,5 @@
 function ColorItBaby(color)
-    color = color or "melange"
+    color = color or "navigate"
 
     -- Enable italics in melange theme
     vim.g.melange_enable_font_variants = {
@@ -10,6 +10,7 @@ function ColorItBaby(color)
         strikethrough = true
     }
 
+    vim.g.navigate_transparent = true
     vim.cmd.colorscheme(color)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -31,6 +32,7 @@ function ColorItBaby(color)
             vim.api.nvim_set_hl(0, group, hl)
         end
     end
+
 end
 
 ColorItBaby()
